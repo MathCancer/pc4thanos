@@ -74,8 +74,8 @@ class SubstrateTab(object):
         # self.x_range = 2000.
         # self.y_range = 2000.
 
-        self.show_nucleus = False
-        self.show_edge = True
+        self.show_nucleus = True
+        self.show_edge = False 
 
         # initial value
         self.field_index = 4
@@ -148,7 +148,8 @@ class SubstrateTab(object):
 
         self.cmap_fixed_toggle = Checkbox(
             description='Fix',
-            disabled=False,
+            disabled=False, 
+            value=True,  
 #           layout=Layout(width=constWidth2),
         )
         self.cmap_fixed_toggle.observe(self.mcds_field_cb)
@@ -201,7 +202,7 @@ class SubstrateTab(object):
 
         self.cmap_max = FloatText(
             description='Max',
-            value=38,
+            value=1,
             step = 0.1,
             disabled=True,
             layout=Layout(width=constWidth2),
