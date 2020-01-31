@@ -525,7 +525,7 @@ void Thanos_function( Cell* pCell, Phenotype& phenotype, double dt )
 		// give some time for the cinematic ending 
 		
 		PhysiCell_settings.max_time = 
-			PhysiCell_globals.current_time + 300.0; 
+			PhysiCell_globals.current_time + 600.0; 
 	}				
 	
 	// look for nearby things to attack 
