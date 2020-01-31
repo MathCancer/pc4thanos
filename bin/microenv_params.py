@@ -26,45 +26,45 @@ class MicroenvTab(object):
         desc_button_layout={'width':'45%'}
 
 
-        menv_var1 = Button(description='director_signal', disabled=True, layout=name_button_layout)
+        menv_var1 = Button(description='thanos', disabled=True, layout=name_button_layout)
         menv_var1.style.button_color = 'tan'
 
         param_name1 = Button(description='diffusion_coefficient', disabled=True, layout=name_button_layout)
 
-        self.director_signal_diffusion_coefficient = FloatText(value=1000,
-          step=100,style=style, layout=widget_layout)
+        self.thanos_diffusion_coefficient = FloatText(value=100000.0,
+          step=10000,style=style, layout=widget_layout)
 
         param_name2 = Button(description='decay_rate', disabled=True, layout=name_button_layout)
 
-        self.director_signal_decay_rate = FloatText(value=.1,
-          step=0.01,style=style, layout=widget_layout)
+        self.thanos_decay_rate = FloatText(value=1,
+          step=0.1,style=style, layout=widget_layout)
         param_name3 = Button(description='initial_condition', disabled=True, layout=name_button_layout)
 
-        self.director_signal_initial_condition = FloatText(value=0,style=style, layout=widget_layout)
+        self.thanos_initial_condition = FloatText(value=0.0,style=style, layout=widget_layout)
         param_name4 = Button(description='Dirichlet_boundary_condition', disabled=True, layout=name_button_layout)
 
-        self.director_signal_Dirichlet_boundary_condition = FloatText(value=1,style=style, layout=widget_layout)
-        self.director_signal_Dirichlet_boundary_condition_toggle = Checkbox(description='on/off', disabled=False,style=style, layout=widget_layout)
+        self.thanos_Dirichlet_boundary_condition = FloatText(value=1.0,style=style, layout=widget_layout)
+        self.thanos_Dirichlet_boundary_condition_toggle = Checkbox(description='on/off', disabled=False,style=style, layout=widget_layout)
 
-        menv_var2 = Button(description='cargo_signal', disabled=True, layout=name_button_layout)
+        menv_var2 = Button(description='avenger', disabled=True, layout=name_button_layout)
         menv_var2.style.button_color = 'lightgreen'
 
         param_name5 = Button(description='diffusion_coefficient', disabled=True, layout=name_button_layout)
 
-        self.cargo_signal_diffusion_coefficient = FloatText(value=1000,
-          step=100,style=style, layout=widget_layout)
+        self.avenger_diffusion_coefficient = FloatText(value=100000.0,
+          step=10000,style=style, layout=widget_layout)
 
         param_name6 = Button(description='decay_rate', disabled=True, layout=name_button_layout)
 
-        self.cargo_signal_decay_rate = FloatText(value=.4,
+        self.avenger_decay_rate = FloatText(value=1,
           step=0.1,style=style, layout=widget_layout)
         param_name7 = Button(description='initial_condition', disabled=True, layout=name_button_layout)
 
-        self.cargo_signal_initial_condition = FloatText(value=0,style=style, layout=widget_layout)
+        self.avenger_initial_condition = FloatText(value=0.0,style=style, layout=widget_layout)
         param_name8 = Button(description='Dirichlet_boundary_condition', disabled=True, layout=name_button_layout)
 
-        self.cargo_signal_Dirichlet_boundary_condition = FloatText(value=1,style=style, layout=widget_layout)
-        self.cargo_signal_Dirichlet_boundary_condition_toggle = Checkbox(description='on/off', disabled=False,style=style, layout=widget_layout)
+        self.avenger_Dirichlet_boundary_condition = FloatText(value=1.0,style=style, layout=widget_layout)
+        self.avenger_Dirichlet_boundary_condition_toggle = Checkbox(description='on/off', disabled=False,style=style, layout=widget_layout)
         self.calculate_gradient = Checkbox(description='calculate_gradients', disabled=False, layout=desc_button_layout)
         self.track_internal = Checkbox(description='track_in_agents', disabled=False, layout=desc_button_layout)
 
@@ -82,27 +82,27 @@ class MicroenvTab(object):
 
 
 
-        row_director_signal = [menv_var1,  ] 
-        row1 = [param_name1, self.director_signal_diffusion_coefficient, menv_units_button1]
-        row2 = [param_name2, self.director_signal_decay_rate, menv_units_button2]
-        row3 = [param_name3, self.director_signal_initial_condition, units_button1]
-        row4 = [param_name4, self.director_signal_Dirichlet_boundary_condition, units_button2, self.director_signal_Dirichlet_boundary_condition_toggle]
-        row_cargo_signal = [menv_var2,  ] 
-        row5 = [param_name5, self.cargo_signal_diffusion_coefficient, menv_units_button5]
-        row6 = [param_name6, self.cargo_signal_decay_rate, menv_units_button6]
-        row7 = [param_name7, self.cargo_signal_initial_condition, units_button3]
-        row8 = [param_name8, self.cargo_signal_Dirichlet_boundary_condition, units_button4, self.cargo_signal_Dirichlet_boundary_condition_toggle]
+        row_thanos = [menv_var1,  ] 
+        row1 = [param_name1, self.thanos_diffusion_coefficient, menv_units_button1]
+        row2 = [param_name2, self.thanos_decay_rate, menv_units_button2]
+        row3 = [param_name3, self.thanos_initial_condition, units_button1]
+        row4 = [param_name4, self.thanos_Dirichlet_boundary_condition, units_button2, self.thanos_Dirichlet_boundary_condition_toggle]
+        row_avenger = [menv_var2,  ] 
+        row5 = [param_name5, self.avenger_diffusion_coefficient, menv_units_button5]
+        row6 = [param_name6, self.avenger_decay_rate, menv_units_button6]
+        row7 = [param_name7, self.avenger_initial_condition, units_button3]
+        row8 = [param_name8, self.avenger_Dirichlet_boundary_condition, units_button4, self.avenger_Dirichlet_boundary_condition_toggle]
         row9 = [self.calculate_gradient,]
         row10 = [self.track_internal,]
 
 
         box_layout = Layout(display='flex', flex_flow='row', align_items='stretch', width='100%')
-        box_director_signal = Box(children=row_director_signal, layout=box_layout)
+        box_thanos = Box(children=row_thanos, layout=box_layout)
         box1 = Box(children=row1, layout=box_layout)
         box2 = Box(children=row2, layout=box_layout)
         box3 = Box(children=row3, layout=box_layout)
         box4 = Box(children=row4, layout=box_layout)
-        box_cargo_signal = Box(children=row_cargo_signal, layout=box_layout)
+        box_avenger = Box(children=row_avenger, layout=box_layout)
         box5 = Box(children=row5, layout=box_layout)
         box6 = Box(children=row6, layout=box_layout)
         box7 = Box(children=row7, layout=box_layout)
@@ -111,12 +111,12 @@ class MicroenvTab(object):
         box10 = Box(children=row10, layout=box_layout)
 
         self.tab = VBox([
-          box_director_signal,
+          box_thanos,
           box1,
           box2,
           box3,
           box4,
-          box_cargo_signal,
+          box_avenger,
           box5,
           box6,
           box7,
@@ -135,23 +135,23 @@ class MicroenvTab(object):
 
         uep = xml_root.find('.//microenvironment_setup')  # find unique entry point
 
-        self.director_signal_diffusion_coefficient.value = float(vp[0].find('.//diffusion_coefficient').text)
-        self.director_signal_decay_rate.value = float(vp[0].find('.//decay_rate').text)
-        self.director_signal_initial_condition.value = float(vp[0].find('.//initial_condition').text)
-        self.director_signal_Dirichlet_boundary_condition.value = float(vp[0].find('.//Dirichlet_boundary_condition').text)
+        self.thanos_diffusion_coefficient.value = float(vp[0].find('.//diffusion_coefficient').text)
+        self.thanos_decay_rate.value = float(vp[0].find('.//decay_rate').text)
+        self.thanos_initial_condition.value = float(vp[0].find('.//initial_condition').text)
+        self.thanos_Dirichlet_boundary_condition.value = float(vp[0].find('.//Dirichlet_boundary_condition').text)
         if vp[0].find('.//Dirichlet_boundary_condition').attrib['enabled'].lower() == 'true':
-          self.director_signal_Dirichlet_boundary_condition_toggle.value = True
+          self.thanos_Dirichlet_boundary_condition_toggle.value = True
         else:
-          self.director_signal_Dirichlet_boundary_condition_toggle.value = False
+          self.thanos_Dirichlet_boundary_condition_toggle.value = False
 
-        self.cargo_signal_diffusion_coefficient.value = float(vp[1].find('.//diffusion_coefficient').text)
-        self.cargo_signal_decay_rate.value = float(vp[1].find('.//decay_rate').text)
-        self.cargo_signal_initial_condition.value = float(vp[1].find('.//initial_condition').text)
-        self.cargo_signal_Dirichlet_boundary_condition.value = float(vp[1].find('.//Dirichlet_boundary_condition').text)
+        self.avenger_diffusion_coefficient.value = float(vp[1].find('.//diffusion_coefficient').text)
+        self.avenger_decay_rate.value = float(vp[1].find('.//decay_rate').text)
+        self.avenger_initial_condition.value = float(vp[1].find('.//initial_condition').text)
+        self.avenger_Dirichlet_boundary_condition.value = float(vp[1].find('.//Dirichlet_boundary_condition').text)
         if vp[1].find('.//Dirichlet_boundary_condition').attrib['enabled'].lower() == 'true':
-          self.cargo_signal_Dirichlet_boundary_condition_toggle.value = True
+          self.avenger_Dirichlet_boundary_condition_toggle.value = True
         else:
-          self.cargo_signal_Dirichlet_boundary_condition_toggle.value = False
+          self.avenger_Dirichlet_boundary_condition_toggle.value = False
 
         if uep.find('.//options//calculate_gradients').text.lower() == 'true':
           self.calculate_gradient.value = True
@@ -173,17 +173,17 @@ class MicroenvTab(object):
                 vp.append(var)
 
         uep = xml_root.find('.//microenvironment_setup')  # find unique entry point
-        vp[0].find('.//diffusion_coefficient').text = str(self.director_signal_diffusion_coefficient.value)
-        vp[0].find('.//decay_rate').text = str(self.director_signal_decay_rate.value)
-        vp[0].find('.//initial_condition').text = str(self.director_signal_initial_condition.value)
-        vp[0].find('.//Dirichlet_boundary_condition').text = str(self.director_signal_Dirichlet_boundary_condition.value)
-        vp[0].find('.//Dirichlet_boundary_condition').attrib['enabled'] = str(self.director_signal_Dirichlet_boundary_condition_toggle.value).lower()
+        vp[0].find('.//diffusion_coefficient').text = str(self.thanos_diffusion_coefficient.value)
+        vp[0].find('.//decay_rate').text = str(self.thanos_decay_rate.value)
+        vp[0].find('.//initial_condition').text = str(self.thanos_initial_condition.value)
+        vp[0].find('.//Dirichlet_boundary_condition').text = str(self.thanos_Dirichlet_boundary_condition.value)
+        vp[0].find('.//Dirichlet_boundary_condition').attrib['enabled'] = str(self.thanos_Dirichlet_boundary_condition_toggle.value).lower()
 
-        vp[1].find('.//diffusion_coefficient').text = str(self.cargo_signal_diffusion_coefficient.value)
-        vp[1].find('.//decay_rate').text = str(self.cargo_signal_decay_rate.value)
-        vp[1].find('.//initial_condition').text = str(self.cargo_signal_initial_condition.value)
-        vp[1].find('.//Dirichlet_boundary_condition').text = str(self.cargo_signal_Dirichlet_boundary_condition.value)
-        vp[1].find('.//Dirichlet_boundary_condition').attrib['enabled'] = str(self.cargo_signal_Dirichlet_boundary_condition_toggle.value).lower()
+        vp[1].find('.//diffusion_coefficient').text = str(self.avenger_diffusion_coefficient.value)
+        vp[1].find('.//decay_rate').text = str(self.avenger_decay_rate.value)
+        vp[1].find('.//initial_condition').text = str(self.avenger_initial_condition.value)
+        vp[1].find('.//Dirichlet_boundary_condition').text = str(self.avenger_Dirichlet_boundary_condition.value)
+        vp[1].find('.//Dirichlet_boundary_condition').attrib['enabled'] = str(self.avenger_Dirichlet_boundary_condition_toggle.value).lower()
 
 
         uep.find('.//options//calculate_gradients').text = str(self.calculate_gradient.value)
