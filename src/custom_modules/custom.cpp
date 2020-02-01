@@ -125,11 +125,7 @@ void create_cell_types( void )
 
 	// initially no necrosis 
 	cell_defaults.phenotype.death.rates[necrosis_model_index] = 0.0; 
-<<<<<<< HEAD
 	
-=======
-
->>>>>>> 9cbf6e9dfb82f2c1debd1961191723a03e6b4a6e
 	// add custom data here, if any 
 	
 	cell_defaults.custom_data.add_variable( "health" , "dimensionless", 1.0 );
@@ -194,7 +190,7 @@ void create_cell_types( void )
 	Thanos.custom_data["strength"] = parameters.doubles("thanos_strength" ); 
 	
 	int thanos_sig_i = microenvironment.find_density_index( "thanos" );
-	Thanos.phenotype.secretion.secretion_rates[thanos_sig_i] = 250; 
+	Thanos.phenotype.secretion.secretion_rates[thanos_sig_i] = 10; 
 	Thanos.phenotype.secretion.saturation_densities[thanos_sig_i] = 1; 
 	
 	// Avenger setup 
@@ -218,7 +214,7 @@ void create_cell_types( void )
 	avenger.phenotype.secretion.secretion_rates[thanos_sig_i] = 0; 
 	avenger.phenotype.secretion.saturation_densities[thanos_sig_i] = 1; 
 
-	avenger.phenotype.secretion.secretion_rates[avenger_sig_i] = 250; 
+	avenger.phenotype.secretion.secretion_rates[avenger_sig_i] = 10; 
 	avenger.phenotype.secretion.saturation_densities[avenger_sig_i] = 1; 
 
 	// Thanos is a big guy 
