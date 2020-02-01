@@ -426,7 +426,7 @@ class SubstrateTab(object):
 
                 # self.field_min_max[field_name][0] = field_idx   #rwh: helps debug
                 # self.field_min_max[field_name][1] = field_idx+1   
-                self.field_min_max[field_name][2] = False
+                self.field_min_max[field_name][2] = True
                 field_idx += 1
 
 #        constWidth = '180px'
